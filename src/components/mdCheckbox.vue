@@ -62,18 +62,35 @@
 			if(this.isGroup && this.checkboxGroup.value.length){
 				if(this.checkboxGroup.value.indexOf(this.value)>=0){
 					this.$els.input.checked = true
+					this.checked = this.value
 				} else {
 					this.$els.input.checked = false
+					this.checked = null
 				}
 				
+			}
+		},
+		watch:{
+			checked(){
+				if(this.isGroup){
+					const index = this.checkboxGroup.value.indexOf(this.value)
+					if(this.checked && index==-1){
+						this.checkboxGroup.value.push(this.value)
+					}
+					if(this.checked && index!=-1){
+						this.checkboxGroup.value.splice(index,index)
+					}
+				}
 			}
 		},
 		methods:{
 			invoke:function(){
 				if(this.checkboxGroup.value.indexOf(this.value)>=0){
 					this.$els.input.checked = true
+					this.checked = this.value
 				} else {
 					this.$els.input.checked = false
+					this.checked = null
 				}
 				
 			},
@@ -149,6 +166,25 @@
 		-webkit-transform: scale(1) rotate(45deg);
 		-moz-transform: scale(1) rotate(45deg);
 		transform: scale(1) rotate(45deg); 
+	}
+	.md-checkbox label > .box:after{
+		display: block;
+		background-color: #eee;
+		content: ' ';
+		width: 40px;
+		height: 40px;
+		opacity: .5;
+		border-radius: 50%;
+		transform-origin: center;
+		transform: scale(0);
+		top: -12px;
+		left: -12px;
+		position: absolute;
+		transition-duration: 0.3s; 
+
+	}
+	.md-checkbox input[type=checkbox]:checked ~ label > .box:after{
+		transform: scale(2);
 	}
 	.md-checkbox input[type=checkbox]:disabled ~ label,
 	.md-checkbox input[type=checkbox][disabled] ~ label {

@@ -1,5 +1,5 @@
 <template>
-	<div :class="color + inlineClass">
+	<div>
 		<slot></slot>
 	</div>
 </template>
@@ -20,14 +20,16 @@
 		}
 	},
 	watch:{
-		value:{
-			deep:true,
-			handler(){
-				this.$children.forEach((el) => {
-					e.invoke()
-				})
-			}
+		value(){
+			this.update()
 			
+		}
+	},
+	methods: {
+		update : function(){
+			this.$children.forEach((el) => {
+					el.invoke()
+				})
 		}
 	},
 	created(){
