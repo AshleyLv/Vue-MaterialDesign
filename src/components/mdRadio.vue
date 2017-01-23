@@ -1,6 +1,6 @@
 <template>
-	<div :class="'md-checkbox '+typeColor + inlineClass " @click.prevent="toggle">
-		<input type="checkbox" v-el:input class="md-check" :value="value" :name="name" :disabled="disabled" :checked="isChecked" :inline="inline">
+	<div :class="'md-radio '+typeColor + inlineClass " @click.prevent="select">
+		<input type="radio" v-el:input class="md-check" :value="value" :name="name" :disabled="disabled" :checked="isSelected" :inline="inline">
 		<label>
 			<span class="check"></span>
 			<span class="box"></span>
@@ -104,25 +104,26 @@
 		}
 	}
 </script>
+
 <style lang="less">
 	@import "./utils/common.less";
-	.md-checkbox{
+	.md-radio{
 		position: relative;
 		margin: 5px 3px;
 	}
-	.md-checkbox.inline-checkbox{
+	.md-radio.inline-checkbox{
 		display: inline-block;
 	}
-	.md-checkbox input[type='checkbox']{
+	.md-radio input[type='radio']{
 		visibility: hidden;
 		position: absolute;
 	}
-	.md-checkbox label {
+	.md-radio label {
 		cursor: pointer;
 		padding-left: 30px; 
 		color:#666;
 	}
-	.md-checkbox label > span{
+	.md-radio label > span{
 		display: block;
 		position: absolute;
 		left: 0;
@@ -130,23 +131,23 @@
 		-moz-transition-duration: 0.3s;
 		transition-duration: 0.3s; 
 	}
-	.md-checkbox label > .box{
-		width: 16px;
-		height: 16px;
+	.md-radio label > .box{
+		width: 14px;
+		height: 14px;
 		border: 2px solid #666;
+		border-radius: 50%;
 		z-index: 1;
 		-webkit-transition-delay: 0.2s;
 		-moz-transition-delay: 0.2s;
 		transition-delay: 0.2s; 
 	}
-	.md-checkbox label > .check{
-		width: 8px;
-		height: 16px;
-		top: -4px;
-		left: 6px;
-		border: 2px solid #36c6d3;
-		border-top: none;
-		border-left: none;
+	.md-radio label > .check{
+		width: 10px;
+		height: 10px;
+		top: 4px;
+		left: 4px;
+		background-color: #666;
+		border-radius: 50%;
 		z-index: 2;
 		opacity: 0;
 		-webkit-transform: rotate(180deg);
@@ -156,19 +157,7 @@
 		-moz-transition-delay: 0.3s;
 		transition-delay: 0.3s;
 	}
-	.md-checkbox input[type=checkbox]:checked ~ label > .box {
-		opacity: 0;
-		-webkit-transform: scale(0) rotate(-180deg);
-		-moz-transform: scale(0) rotate(-180deg);
-		transform: scale(0) rotate(-180deg); 
-	}
-	.md-checkbox input[type=checkbox]:checked ~ label > .check {
-		opacity: 1;
-		-webkit-transform: scale(1) rotate(45deg);
-		-moz-transform: scale(1) rotate(45deg);
-		transform: scale(1) rotate(45deg); 
-	}
-	.md-checkbox label > .box:after{
+	.md-radio label > .box:after{
 		display: block;
 		background-color: #eee;
 		content: ' ';
@@ -184,15 +173,15 @@
 		transition-duration: 0.3s; 
 
 	}
-	.md-checkbox input[type=checkbox]:checked ~ label > .box:after{
+	.md-radio input[type=radio]:checked ~ label > .box:after{
 		transform: scale(2);
 	}
-	.md-checkbox input[type=checkbox]:disabled ~ label,
-	.md-checkbox input[type=checkbox][disabled] ~ label {
+	.md-radio input[type=radio]:disabled ~ label,
+	.md-radio input[type=radio][disabled] ~ label {
 		cursor: not-allowed;
 		opacity: 0.7 ;
 	}
-	.primary .md-checkbox label, .primary.md-checkbox label{
+	.primary .md-radio label, .primary.md-radio label{
 		color:@primary-btn-color;
 	}
 	.primary .md-checkbox label > .box, .primary.md-checkbox label > .box,
