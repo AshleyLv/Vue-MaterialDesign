@@ -35,7 +35,7 @@
 			
 		},
 		computed:{
-			isChecked(){
+			isSelected(){
 				return this.checked === this.value
 			},
 			typeColor(){
@@ -94,7 +94,7 @@
 				}
 				
 			},
-			toggle:function(){
+			select:function(){
 				if(!this.disabled){
 					this.checked = this.checked ? null : this.value
 
@@ -150,12 +150,10 @@
 		border-radius: 50%;
 		z-index: 2;
 		opacity: 0;
-		-webkit-transform: rotate(180deg);
-		-moz-transform: rotate(180deg);
-		transform: rotate(180deg);
-		-webkit-transition-delay: 0.3s;
-		-moz-transition-delay: 0.3s;
-		transition-delay: 0.3s;
+	}
+	.md-radio input[type=radio]:checked ~ label > .check {
+		opacity: 1;
+		
 	}
 	.md-radio label > .box:after{
 		display: block;
@@ -170,11 +168,11 @@
 		top: -12px;
 		left: -12px;
 		position: absolute;
-		transition-duration: 0.3s; 
+		
 
 	}
 	.md-radio input[type=radio]:checked ~ label > .box:after{
-		transform: scale(2);
+		animation: .3s ripple linear;
 	}
 	.md-radio input[type=radio]:disabled ~ label,
 	.md-radio input[type=radio][disabled] ~ label {
@@ -232,6 +230,18 @@
 	.teal .md-checkbox label > .box, .teal.md-checkbox label > .box,
 	.teal .md-checkbox label > .check, .teal.md-checkbox label > .check{
 		border-color:@teal-btn-color;
+	}
+	@keyframs ripple{
+		0%{
+			transform: scale(0);
+		}
+		
+		50%{
+			transform: scale(2);
+		}
+		100%{
+			transform: scale(0);
+		}
 	}
 
 	
