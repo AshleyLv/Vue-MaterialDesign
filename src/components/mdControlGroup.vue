@@ -6,8 +6,12 @@
 <script type="text/javascript">
 	export default {
 	props:{
-		value: {
+		multiValue: {
 			type:Array,
+			default:null
+		},
+		singleValue:{
+			type:String,
 			default:null
 		},
 		color:{

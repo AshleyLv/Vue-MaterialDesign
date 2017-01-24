@@ -2,7 +2,7 @@ import Vue from 'vue';
 import mdCkeckbox from './components/mdCheckbox.vue';
 import mdControlGroup from './components/mdControlGroup.vue'; 
 import mdRadio from './components/mdRadio.vue';
-new Vue({
+var vm = new Vue({
     el: 'body',
     components:{'mdCkeckbox':mdCkeckbox,
                 'mdControlGroup' :mdControlGroup,
@@ -13,8 +13,9 @@ new Vue({
         five: 'five',
         three: ''
       },
-      radioValue: 'aa',
-      checkboxGroupValue:['one','two']
+      radioValue: 'two',
+      checkboxGroupValue:['one','two'],
+      radioGroupValue:'one'
    }
      
  

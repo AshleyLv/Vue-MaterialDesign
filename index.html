@@ -5,7 +5,7 @@
     <title>Vue-md-demo</title>
 </head>
 <body>
-<md-control-group color="success" :value.sync="checkboxGroupValue">
+<md-control-group color="success" :multi-value.sync="checkboxGroupValue">
 	<md-ckeckbox  value="one" :inline="true" >success</md-ckeckbox>
 	<md-ckeckbox value="two" :inline="true" >error</md-ckeckbox>
 	<md-ckeckbox value="three" color="info" :inline="true" >info</md-ckeckbox>
@@ -17,9 +17,11 @@
 <md-ckeckbox value="eight" color="teal" :checked.sync="checkboxValue.eight">teal</md-ckeckbox>
 <md-ckeckbox value="nine" :checked.sync="checkboxValue.nine">normal</md-ckeckbox>
 <md-ckeckbox value="seven" disabled :checked.sync="checkboxValue.seven">disabled</md-ckeckbox>  -->
-<md-radio value="one" name="radio" color="info">option1</md-radio>
-<md-radio value="two" name="radio" color="info">option2</md-radio>
-<md-radio value="three" name="radio" color="info">option3</md-radio>
+<md-control-group color="success" :single-value.sync="radioGroupValue">
+	<md-radio value="one" name="radio" color="success" :checked.sync="radioValue">option1</md-radio>
+	<md-radio value="two" name="radio" :checked.sync="radioValue">option2</md-radio>
+	<md-radio value="three" name="radio" color="warning" :checked.sync="radioValue">option3</md-radio>
+</md-control-group>
 <script src="dist/build.js"></script>
 </body>
 </html>
