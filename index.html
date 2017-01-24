@@ -17,7 +17,7 @@
 <md-ckeckbox value="eight" color="teal" :checked.sync="checkboxValue.eight">teal</md-ckeckbox>
 <md-ckeckbox value="nine" :checked.sync="checkboxValue.nine">normal</md-ckeckbox>
 <md-ckeckbox value="seven" disabled :checked.sync="checkboxValue.seven">disabled</md-ckeckbox>  -->
-<md-control-group color="success" :single-value.sync="radioGroupValue">
+<md-control-group :inline="true" :single-value.sync="radioGroupValue">
 	<md-radio value="one" name="radio" color="success" :checked.sync="radioValue">option1</md-radio>
 	<md-radio value="two" name="radio" :checked.sync="radioValue">option2</md-radio>
 	<md-radio value="three" name="radio" color="warning" :checked.sync="radioValue">option3</md-radio>

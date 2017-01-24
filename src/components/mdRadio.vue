@@ -102,7 +102,7 @@
 	.md-radio{
 		position: relative;
 		margin: 5px 3px;
-		.inline-checkbox{
+		&.inline-checkbox{
 			display: inline-block;
 		}
 		input[type='radio']{
