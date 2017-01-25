@@ -1,5 +1,5 @@
 <template>
-	<button :type="type" :class="'md-btn ' + typeBtn + ' ' + color + ' ' + size" :disabled="disabled"><slot></slot></button>
+	<button :type="type" :class="'md-btn ' + typeBtn + ' ' + color + ' ' + size + ' ' + outlineClass" :disabled="disabled"><slot></slot></button>
 </template>
 <script type="text/javascript">
 	import {validateValue} from './utils/utils';
@@ -14,7 +14,10 @@
 			},
 			typeBtn:{
 				type:String,
-				default:'normal'
+				default:'normal',
+				validator (value) {
+                    return validateValue(value, ['normal', 'circle']);
+                }
 			},
 			color:{
 				type:String,
