@@ -1,5 +1,5 @@
 <template>
-	<button :type="type" :class="'md-btn ' + typeBtn + ' ' + color + ' ' + size + ' ' + outlineClass" :disabled="disabled"><slot></slot></button>
+	<button :type="type" :class="'md-btn ' + typeBtn + ' ' + color + ' ' + size + ' ' + outlineClass" :disabled="disabled" @click="ripple" v-el:btn><slot></slot></button>
 </template>
 <script type="text/javascript">
 	import {validateValue} from './utils/utils';
@@ -40,6 +40,15 @@
                 }
 			}
 		},
+		ready(){
+			 	this.rippleLayer = document.createElement('span')
+				this.rippleLayer.className = 'ripple'
+				const btnWidth = window.getComputedStyle(this.$els.btn).width
+				const btnHeight = window.getComputedStyle(this.$els.btn).height
+				const maxlength = Math.max(btnWidth.substr(0,btnWidth.indexOf('px')), btnHeight.substr(0,btnHeight.indexOf('px')))
+				this.rippleLayer.style.width = this.rippleLayer.style.height = maxlength + 'px'
+				this.$els.btn.append(this.rippleLayer)
+		},
 		computed:{
 			outlineClass(){
 				return this.outline?'btn-outline':''
@@ -47,6 +56,20 @@
 			
 			
 		},
+		methods:{
+			ripple : function(event){
+				var self = this
+				const maxlength = this.rippleLayer.style.height.substr(0, this.rippleLayer.style.height.indexOf('px'))
+				const x = event.pageX - this.$els.btn.offsetLeft - maxlength/2,
+				y = event.pageY - this.$els.btn.offsetTop - maxlength/2
+				this.rippleLayer.className  += ' ripple-active'
+				this.rippleLayer.style.top = y + 'px'
+				this.rippleLayer.style.left = x + 'px'
+				setTimeout(function() {
+					self.rippleLayer.className = 'ripple'
+				}, 750);
+			}
+		}
 
 	}
 </script>
@@ -54,13 +77,13 @@
 	@import "./utils/common.less";
 	.md-btn {
 		border: none;
+		overflow:hidden;
 		position: relative;
 		color: #fff;
 		background: #e1e5ec;
 		overflow: hidden;
 		padding: 6px 12px;
 		font-size: 14px;
-		margin:5px;
 		&.btn-xs{
 			padding: 1px 5px;
 			font-size: 12px;
@@ -126,5 +149,28 @@
 				color: @teal-btn-color;
 			}
 		}
+		.ripple{
+			display: block; 
+			position: absolute;
+			top:-50px;
+			left:-20px;
+			background: rgba(0, 255, 255, 0.5);
+			border-radius: 50%;
+			transform: scale(0);
+			-webkit-transform: scale(0);
+			z-index: 2;
+
+
+		}
+		.ripple-active{
+			animation: btn-ripple .75s linear;
+		}
+
+
+
 	}
+	@keyframes btn-ripple {
+			0%{opacity: 1; transform: scale(0);}
+			100% {opacity: 0;transform: scale(2.5);}
+		}
 </style>
