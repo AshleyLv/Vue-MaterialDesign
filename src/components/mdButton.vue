@@ -1,5 +1,5 @@
 <template>
-	<button :type="type" :class="'md-btn ' + typeBtn + ' ' + color + ' ' + size + ' ' + outlineClass" :disabled="disabled" @click="ripple" v-el:btn><slot></slot></button>
+	<button :type="type" :class="'md-btn ' + shape + ' ' + color + ' ' + size + ' ' + outlineClass" :disabled="disabled" @click="ripple" v-el:btn><slot></slot></button>
 </template>
 <script type="text/javascript">
 	import {validateValue} from './utils/utils';
@@ -12,11 +12,11 @@
                     return validateValue(value, ['button', 'submit', 'reset']);
                 }
 			},
-			typeBtn:{
+			shape:{
 				type:String,
 				default:'normal',
 				validator (value) {
-                    return validateValue(value, ['normal', 'circle']);
+                    return validateValue(value, ['normal', 'btn-circle']);
                 }
 			},
 			color:{
@@ -46,6 +46,9 @@
 				const btnWidth = window.getComputedStyle(this.$els.btn).width
 				const btnHeight = window.getComputedStyle(this.$els.btn).height
 				const maxlength = Math.max(btnWidth.substr(0,btnWidth.indexOf('px')), btnHeight.substr(0,btnHeight.indexOf('px')))
+				if('btn-circle' === this.shape){
+					this.$els.btn.style.width = this.$els.btn.style.height = maxlength + 'px'
+				}
 				this.rippleLayer.style.width = this.rippleLayer.style.height = maxlength + 'px'
 				this.$els.btn.append(this.rippleLayer)
 		},
@@ -100,6 +103,11 @@
 			background-color: transparent;
 			border: 2px solid #e1e5ec;
 			color: #444;
+		}
+		&.btn-circle{
+			border-radius:50%;
+			padding:6px;
+
 		}
 		&.btn-primary{
 			background-color: @primary-btn-color;
