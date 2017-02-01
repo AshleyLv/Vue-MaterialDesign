@@ -70,7 +70,7 @@
 				this.rippleLayer.style.left = x + 'px'
 				setTimeout(function() {
 					self.rippleLayer.className = 'ripple'
-				}, 750);
+				}, 300);
 			}
 		}
 
@@ -80,12 +80,11 @@
 	@import "./utils/common.less";
 	.md-btn {
 		border: none;
-		overflow:hidden;
 		position: relative;
 		color: #fff;
 		background: #e1e5ec;
-		overflow: hidden;
 		padding: 6px 12px;
+		overflow:hidden;
 		font-size: 14px;
 		&.btn-xs{
 			padding: 1px 5px;
@@ -107,7 +106,20 @@
 		&.btn-circle{
 			border-radius:50%;
 			padding:6px;
+			overflow: visible;
 
+		}
+		.ripple{
+			display: block; 
+			position: absolute;
+			top:-50px;
+			left:-20px;
+			opacity:.5;
+			background: #fff;
+			border-radius: 50%;
+			transform: scale(0);
+			-webkit-transform: scale(0);
+			z-index: 2;
 		}
 		&.btn-primary{
 			background-color: @primary-btn-color;
@@ -115,7 +127,11 @@
 				background-color: transparent;
 				border: 2px solid @primary-btn-color;
 				color: @primary-btn-color;
+				.ripple{
+					background: @primary-btn-color;
+				}
 			}
+			
 		}
 		&.btn-info{
 			background-color: @info-btn-color;
@@ -123,6 +139,9 @@
 				background-color: transparent;
 				border: 2px solid @info-btn-color;
 				color: @info-btn-color;
+				.ripple{
+					background: @info-btn-color;
+				}
 			}
 		}
 		&.btn-success{
@@ -131,6 +150,9 @@
 				background-color: transparent;
 				border: 2px solid @success-btn-color;
 				color: @success-btn-color;
+				.ripple{
+					background: @success-btn-color;
+				}
 			}
 		}
 		&.btn-error{
@@ -139,6 +161,9 @@
 				background-color: transparent;
 				border: 2px solid @error-btn-color;
 				color: @error-btn-color;
+				.ripple{
+					background: @error-btn-color;
+				}
 			}
 		}
 		&.btn-warning{
@@ -147,6 +172,9 @@
 				background-color: transparent;
 				border: 2px solid @warning-btn-color;
 				color: @warning-btn-color;
+				.ripple{
+					background: @warning-btn-color;
+				}
 			}
 		}
 		&.btn-teal{
@@ -155,23 +183,13 @@
 				background-color: transparent;
 				border: 2px solid @teal-btn-color;
 				color: @teal-btn-color;
+				.ripple{
+					background: @teal-btn-color;
+				}
 			}
 		}
-		.ripple{
-			display: block; 
-			position: absolute;
-			top:-50px;
-			left:-20px;
-			background: rgba(0, 255, 255, 0.5);
-			border-radius: 50%;
-			transform: scale(0);
-			-webkit-transform: scale(0);
-			z-index: 2;
-
-
-		}
 		.ripple-active{
-			animation: btn-ripple .75s linear;
+			animation: btn-ripple .3s linear;
 		}
 
 
@@ -179,6 +197,6 @@
 	}
 	@keyframes btn-ripple {
 			0%{opacity: 1; transform: scale(0);}
-			100% {opacity: 0;transform: scale(2.5);}
+			100% {opacity: 0;transform: scale(1.5);}
 		}
 </style>
