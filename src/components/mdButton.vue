@@ -68,7 +68,7 @@
 				this.rippleLayer.className  += ' ripple-active'
 				this.rippleLayer.style.top = y + 'px'
 				this.rippleLayer.style.left = x + 'px'
-				setTimeout(function() {
+				setTimeout(() => {
 					self.rippleLayer.className = 'ripple'
 				}, 300);
 			}

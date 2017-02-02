@@ -5,29 +5,7 @@
     <title>Vue-md-demo</title>
 </head>
 <body>
-<md-control-group color="success" :multi-value.sync="checkboxGroupValue">
-	<md-ckeckbox  value="one" :inline="true" >success</md-ckeckbox>
-	<md-ckeckbox value="two" :inline="true" >error</md-ckeckbox>
-	<md-ckeckbox value="three" color="info" :inline="true" >info</md-ckeckbox>
-</md-control-group>
-
-<md-ckeckbox value="four" color="teal" :checked.sync="checkboxValue.four">primary</md-ckeckbox>
-<md-ckeckbox value="five" color="default" :checked.sync="checkboxValue.five">default</md-ckeckbox>
-<!-- <md-ckeckbox value="six" color="warning" :checked.sync="checkboxValue.six">warning</md-ckeckbox>
-<md-ckeckbox value="eight" color="teal" :checked.sync="checkboxValue.eight">teal</md-ckeckbox>
-<md-ckeckbox value="nine" :checked.sync="checkboxValue.nine">normal</md-ckeckbox>
-<md-ckeckbox value="seven" disabled :checked.sync="checkboxValue.seven">disabled</md-ckeckbox>  -->
-<md-control-group :inline="true" :single-value.sync="radioGroupValue">
-	<md-radio value="one" name="radio" color="success" :checked.sync="radioValue">option1</md-radio>
-	<md-radio value="two" name="radio" :checked.sync="radioValue">option2</md-radio>
-	<md-radio value="three" name="radio" color="warning" :checked.sync="radioValue">option3</md-radio>
-</md-control-group>
-<md-button type="submit" color="btn-info" size="btn-lg" :outline="true">button</md-button>
-<md-button type="button" color="btn-info" size="btn-sm" shape="btn-circle">button</md-button>
-<md-button type="submit" color="btn-success" size="btn-xs" :outline="true">button</md-button>
-<md-button type="button" color="btn-error" size="btn-lg" shape="btn-circle">button</md-button>
-<md-button type="submit" color="btn-warning" size="btn-lg" :outline="true">button</md-button>
-<md-button type="button" color="btn-teal" size="btn-lg" shape="btn-circle">button</md-button>
+<app-doc></app-doc>
 <script src="dist/build.js"></script>
 </body>
 </html>
