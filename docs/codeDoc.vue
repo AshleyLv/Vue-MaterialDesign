@@ -12,3 +12,14 @@
 		}
 	}
 </script>
+<style lang="less"> 
+	.highlight {
+			margin-bottom: 14px;
+			background-color: #f7f7f9;
+			border: 1px solid #e1e1e8;
+			border-radius: 4px;
+			pre{
+				margin: 0;
+			}
+		}
+</style>

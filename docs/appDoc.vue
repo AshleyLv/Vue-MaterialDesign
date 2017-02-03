@@ -41,6 +41,7 @@
 <style lang="less">
 	body{
 		margin: 0;
+		font-family: 'microsoft Yahei';
 		.header-section{
 			margin: 0;
 			width: 100%;
@@ -48,7 +49,7 @@
 			background: #36c6d3;
 			padding-top: 120px;
 			color: #fff;
-			font-family: 'microsoft Yahei';
+			
 			margin-bottom: 50px;
 			text-align: center;
 			font-size: 20px;
@@ -65,7 +66,11 @@
 				width: 70%;
 				padding: 5px;
 				float: left;
-				background-color: #ccc;
+				.component-label{
+		color:#aaa;
+		font-size: 14px;
+
+	}
 			}
 			.sidebar-container{
 				width: 20%;
@@ -75,13 +80,7 @@
 				background-color: pink;
 			}
 		}
-		.highlight {
-			padding: 9px 14px;
-			margin-bottom: 14px;
-			background-color: #f7f7f9;
-			border: 1px solid #e1e1e8;
-			border-radius: 4px;
-		}
+
 	}
 
 
