@@ -50,7 +50,7 @@
 					this.$els.btn.style.width = this.$els.btn.style.height = maxlength + 'px'
 				}
 				this.rippleLayer.style.width = this.rippleLayer.style.height = maxlength + 'px'
-				this.$els.btn.append(this.rippleLayer)
+				this.$els.btn.appendChild(this.rippleLayer)
 		},
 		computed:{
 			outlineClass(){
