@@ -189,12 +189,6 @@
 				transition-delay: 0.3s;
 			}
 		}
-		&.primary label{
-			color:@primary-btn-color;
-			>.box,>.check{
-				border-color:@primary-btn-color;
-			}
-		}
 		&.default label{
 			color:#666;
 			>.box{
@@ -204,36 +198,45 @@
 				border-color:#36c6d3;
 			}
 		}
-		&.info label{
-			color:@info-btn-color;
-			>.box,>.check{
-				border-color:@info-btn-color;
-			}
+		&.red label{
+			.checkbox-variant(@btn-red-color);
 		}
-		&.success label{
-			color:@success-btn-color;
-			>.box,>.check{
-				border-color:@success-btn-color;
-			}
+		&.pink label{
+			.checkbox-variant(@btn-pink-color);
 		}
-		&.error label{
-			color:@error-btn-color;
-			>.box,>.check{
-				border-color:@error-btn-color;
-			}
+		&.blue label{
+			.checkbox-variant(@btn-blue-color);
 		}
-		&.warning label{
-			color:@warning-btn-color;
-			>.box,>.check{
-				border-color:@warning-btn-color;
-			}
+		&.yellow label{
+			.checkbox-variant(@btn-yellow-color);
+		}
+		&.purple label{
+			.checkbox-variant(@btn-purple-color);
 		}
 		&.teal label{
-			color:@teal-btn-color;
-			>.box,>.check{
-				border-color:@teal-btn-color;
-			}
+			.checkbox-variant(@btn-teal-color);
 		}
+		&.indigo label{
+			.checkbox-variant(@btn-indigo-color);
+		}
+		&.cyan label{
+			.checkbox-variant(@btn-cyan-color);
+		}
+		&.green label{
+			.checkbox-variant(@btn-green-color);
+		}
+		&.orange label{
+			.checkbox-variant(@btn-orange-color);
+		}
+		&.grey label{
+			.checkbox-variant(@btn-grey-color);
+		}
+	}
+	.checkbox-variant(@color){
+		color:@color;
+			>.box,>.check{
+				border-color:@color;
+			}
 	}
 	
 </style>
