@@ -1,7 +1,7 @@
 <template>
-	<div :class="'md-checkbox '+typeColor + inlineClass " @click.prevent="toggle">
-		<input type="checkbox" v-el:input class="md-check" :value="value" :name="name" :disabled="disabled" :checked="isChecked" :inline="inline">
-		<label>
+	<div :class="'md-checkbox '+typeColor + inlineClass ">
+		<input type="checkbox" v-el:input class="md-check" :value="value" :name="name" :disabled="disabled" :checked="isChecked" :inline="inline" >
+		<label @click.prevent="toggle">
 			<span class="check"></span>
 			<span class="box"></span>
 			<slot></slot>
@@ -12,7 +12,7 @@
 	export default{
 		props:{
 			value:{
-				default:true
+				type:String
 			},
 			name:{
 				type:String,
