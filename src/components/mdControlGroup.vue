@@ -24,9 +24,12 @@
 		}
 	},
 	watch:{
-		value(){
+		singleValue(){
 			this.update()
 			
+		},
+		multiValue(){
+			this.update()
 		}
 	},
 	methods: {

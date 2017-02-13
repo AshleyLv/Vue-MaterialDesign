@@ -78,7 +78,7 @@
 		},
 		methods:{
 			invoke:function(){
-				if(this.radioGroup.value==this.value){
+				if(this.radioGroup.singleValue==this.value){
 					this.$els.input.checked = true
 					this.checked = this.value
 				} else {
@@ -188,53 +188,54 @@
 				background-color:#36c6d3;
 			}
 		}
-		&.info label{
-			color:@info-btn-color;
-			>.box{
-				border-color: @info-btn-color;
-			}
-			>.check{
-				background-color:@info-btn-color;
-			}
+		&.red label{
+			.radio-variant(@btn-red-color);
 		}
-		&.success label{
-			color:@success-btn-color;
-			>.box{
-				border-color: @success-btn-color;
-			}
-			>.check{
-				background-color:@success-btn-color;
-			}
+		&.pink label{
+			.radio-variant(@btn-pink-color);
 		}
-		&.error label{
-			color:@error-btn-color;
-			>.box{
-				border-color:@error-btn-color;
-			}
-			>.check{
-				background-color:@error-btn-color;
-			}
+		&.blue label{
+			.radio-variant(@btn-blue-color);
 		}
-		&.warning label{
-			color:@warning-btn-color;
-			>.box{
-				border-color:@warning-btn-color;
-			}
-			>.check{
-				background-color:@warning-btn-color;
-			}
+		&.yellow label{
+			.radio-variant(@btn-yellow-color);
+		}
+		&.purple label{
+			.radio-variant(@btn-purple-color);
 		}
 		&.teal label{
-			color:@teal-btn-color;
-			>.box,>.check{
-				background-color:@teal-btn-color;
-			}
+			.radio-variant(@btn-teal-color);
+		}
+		&.indigo label{
+			.radio-variant(@btn-indigo-color);
+		}
+		&.cyan label{
+			.radio-variant(@btn-cyan-color);
+		}
+		&.green label{
+			.radio-variant(@btn-green-color);
+		}
+		&.orange label{
+			.radio-variant(@btn-orange-color);
+		}
+		&.grey label{
+			.radio-variant(@btn-grey-color);
 		}
 	}
 	@keyframes ripple{
 		0% { transform: scale(0);}
 		100% { transform: scale(2);}
 	}
+	.radio-variant(@color){
+		color:@color;
+			>.box{
+				border-color:@color;
+			}
+			>.check{
+				background-color:@color;
+			}
+	}
+
 
 	
 </style>
