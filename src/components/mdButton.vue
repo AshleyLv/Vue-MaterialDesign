@@ -23,7 +23,7 @@
 				type:String,
 				default:'',
 				validator (value) {
-                    return validateValue(value, ['btn-primary', 'btn-info', 'btn-success','btn-error','btn-warning','btn-teal'])
+                    return validateValue(value, ['btn-red', 'btn-pink', 'btn-blue','btn-yellow','btn-purple','btn-teal', 'btn-indigo', 'btn-cyan','btn-green','btn-orange','btn-grey'])
                 }
 			},
 			disabled:{
@@ -121,72 +121,38 @@
 			-webkit-transform: scale(0);
 			z-index: 2;
 		}
-		&.btn-primary{
-			background-color: @primary-btn-color;
-			&.btn-outline{
-				background-color: transparent;
-				border: 2px solid @primary-btn-color;
-				color: @primary-btn-color;
-				.ripple{
-					background: @primary-btn-color;
-				}
-			}
-			
+		&.btn-red{
+			.button-variant(@btn-red-color);
 		}
-		&.btn-info{
-			background-color: @info-btn-color;
-			&.btn-outline{
-				background-color: transparent;
-				border: 2px solid @info-btn-color;
-				color: @info-btn-color;
-				.ripple{
-					background: @info-btn-color;
-				}
-			}
+		&.btn-pink{
+			.button-variant(@btn-pink-color);
 		}
-		&.btn-success{
-			background-color: @success-btn-color;
-			&.btn-outline{
-				background-color: transparent;
-				border: 2px solid @success-btn-color;
-				color: @success-btn-color;
-				.ripple{
-					background: @success-btn-color;
-				}
-			}
+		&.btn-blue{
+			.button-variant(@btn-blue-color);
 		}
-		&.btn-error{
-			background-color: @error-btn-color;
-			&.btn-outline{
-				background-color: transparent;
-				border: 2px solid @error-btn-color;
-				color: @error-btn-color;
-				.ripple{
-					background: @error-btn-color;
-				}
-			}
+		&.btn-yellow{
+			.button-variant(@btn-yellow-color);
 		}
-		&.btn-warning{
-			background-color: @warning-btn-color;
-			&.btn-outline{
-				background-color: transparent;
-				border: 2px solid @warning-btn-color;
-				color: @warning-btn-color;
-				.ripple{
-					background: @warning-btn-color;
-				}
-			}
+		&.btn-purple{
+			.button-variant(@btn-purple-color);
 		}
 		&.btn-teal{
-			background-color: @teal-btn-color;
-			&.btn-outline{
-				background-color: transparent;
-				border: 2px solid @teal-btn-color;
-				color: @teal-btn-color;
-				.ripple{
-					background: @teal-btn-color;
-				}
-			}
+			.button-variant(@btn-teal-color);
+		}
+		&.btn-indigo{
+			.button-variant(@btn-indigo-color);
+		}
+		&.btn-cyan{
+			.button-variant(@btn-cyan-color);
+		}
+		&.btn-green{
+			.button-variant(@btn-green-color);
+		}
+		&.btn-orange{
+			.button-variant(@btn-orange-color);
+		}
+		&.btn-grey{
+			.button-variant(@btn-grey-color);
 		}
 		.ripple-active{
 			animation: btn-ripple .3s linear;
@@ -196,7 +162,18 @@
 
 	}
 	@keyframes btn-ripple {
-			0%{opacity: 1; transform: scale(0);}
-			100% {opacity: 0;transform: scale(1.5);}
-		}
+		0%{opacity: 1; transform: scale(0);}
+		100% {opacity: 0;transform: scale(1.5);}
+	}
+	.button-variant(@color){
+		background-color: @color;
+			&.btn-outline{
+				background-color: transparent;
+				border: 2px solid @color;
+				color: @color;
+				.ripple{
+					background: @color;
+				}
+			}
+	}
 </style>

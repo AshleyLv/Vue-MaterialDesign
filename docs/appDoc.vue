@@ -9,6 +9,7 @@
 
 <section class="main-section">
 	<div class="demo-container">
+	    <md-button-doc></md-button-doc>
 		<md-checkbox-doc></md-checkbox-doc>
 		<md-radio-doc></md-radio-doc>
 	</div>
@@ -30,13 +31,15 @@
 	import codeDoc from './codeDoc.vue'
 	import mdCheckboxDoc from './mdCheckboxDoc.vue'
 	import mdRadioDoc from './mdRadioDoc.vue'
+	import mdButtonDoc from './mdButtonDoc.vue'
 	export default{
 		components:{
 			mdRadio,
 			mdButton,
 			codeDoc,
 			mdCheckboxDoc,
-			mdRadioDoc
+			mdRadioDoc,
+			mdButtonDoc
 		}
 		
 	}
@@ -70,10 +73,11 @@
 				padding: 5px;
 				float: left;
 				.component-label{
-		color:#aaa;
-		font-size: 14px;
+					color:#666;
+					font-size: 14px;
+					margin: 20px 0 10px 0;
 
-	}
+				}
 			}
 			.sidebar-container{
 				width: 20%;
