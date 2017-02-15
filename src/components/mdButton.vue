@@ -1,5 +1,5 @@
 <template>
-	<button :type="type" :class="'md-btn ' + shape + ' ' + color + ' ' + size + ' ' + outlineClass" :disabled="disabled" @click="ripple" v-el:btn><slot></slot></button>
+	<button :type="type" :class="'md-btn ' + shape + ' ' + color + ' ' + size + ' ' + inverseClass" :disabled="disabled" @click="ripple" v-el:btn><slot></slot></button>
 </template>
 <script type="text/javascript">
 	import {validateValue} from './utils/utils';
@@ -14,9 +14,9 @@
 			},
 			shape:{
 				type:String,
-				default:'normal',
+				default:'',
 				validator (value) {
-                    return validateValue(value, ['normal', 'btn-circle']);
+                    return validateValue(value, ['btn-circle']);
                 }
 			},
 			color:{
@@ -29,14 +29,14 @@
 			disabled:{
 				type:Boolean
 			},
-			outline:{
+			inverse:{
 				type:Boolean
 			},
 			size:{
 				type:String,
 				default:'',
 				validator (value) {
-                    return validateValue(value, ['btn-xs', 'btn-sm', 'btn-lg'])
+                    return validateValue(value, ['btn-xs', 'btn-sm','btn-n', 'btn-lg'])
                 }
 			}
 		},
@@ -53,8 +53,8 @@
 				this.$els.btn.appendChild(this.rippleLayer)
 		},
 		computed:{
-			outlineClass(){
-				return this.outline?'btn-outline':''
+			inverseClass(){
+				return this.inverse?'btn-inverse':''
 			}
 			
 			
@@ -98,7 +98,7 @@
 			padding: 10px 16px;
 			font-size: 18px;
 		}
-		&.btn-outline{
+		&.btn-inverse{
 			background-color: transparent;
 			border: 2px solid #e1e5ec;
 			color: #444;
@@ -167,7 +167,7 @@
 	}
 	.button-variant(@color){
 		background-color: @color;
-			&.btn-outline{
+			&.btn-inverse{
 				background-color: transparent;
 				border: 2px solid @color;
 				color: @color;
