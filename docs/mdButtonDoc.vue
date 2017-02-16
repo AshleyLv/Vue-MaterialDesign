@@ -72,11 +72,11 @@
 				dataTable:{
 					headers:['Name', 'Type', 'Default', 'Description'],
 					options:[{name:'type', type: 'String', default:'button', description:'the type of a button (button, submit, reset)'},
-							 {name:'shape', type: 'String', default:'', description:'the shape of a button, the dfault value is rectangle. Adding "btn-circle" to make a circle button '},
+							 {name:'shape', type: 'String', default:'', description:'the shape of a button, the dfault value is "rectangle". Add "btn-circle" to make a circle button.'},
 							 {name:'size', type: 'String', default:'', description:'the size of a button, there are three options, btn-xs, btn-sm and btn-lg'},
 							 {name:'color', type: 'String', default:'', description:'the color of a button, the options are btn-red, btn-pink, btn-purple, btn-indigo, btn-blue, btn-cyan, btn-green, btn-teal, btn-yellow, btn-orange, btn-grey'},
-							 {name:'disabled', type: 'Boolean', default:'false', description:'Is the button disabled'},
-							 {name:'inverse', type: 'Boolean', default:'false', description:'Is the button inverse color'}]
+							 {name:'disabled', type: 'Boolean', default:'false', description:'set "true" to disable the button'},
+							 {name:'inverse', type: 'Boolean', default:'false', description:'set "true" to turn the button in inverse color'}]
 				}
 			}
 			

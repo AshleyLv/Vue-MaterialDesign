@@ -58,11 +58,11 @@
 				colorfulRadioValue:'red',
 				dataTable:{
 					headers:['Name', 'Type', 'Default', 'Description'],
-					options:[{name:'value', type: 'String', default:'', description:'The value of radio button, radio buttons in one group should have same value'},
+					options:[{name:'value', type: 'String', default:'', description:'The value of radio button, radio buttons in one group should have the same value'},
 							 {name:'name', type: 'String', default:'', description:'The name attrubute of radio button'},
-							 {name:'disabled', type: 'Boolean', default:'false', description:'Is radio button disabled'},
+							 {name:'disabled', type: 'Boolean', default:'false', description:'set "true" to disable the radio button'},
 							 {name:'color', type: 'String', default:'', description:'the color of checkbox'},
-							 {name:'inline', type: 'Boolean', default:'false', description:'Is the checkboxs display in one row'},]
+							 {name:'inline', type: 'Boolean', default:'false', description:'set "true" to make the radio button display inline'},]
 				}
 			}
 			

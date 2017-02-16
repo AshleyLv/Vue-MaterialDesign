@@ -64,9 +64,9 @@
 					headers:['Name', 'Type', 'Default', 'Description'],
 					options:[{name:'value', type: 'String', default:'', description:'The value of the checkbox'},
 							 {name:'name', type: 'String', default:'', description:'The name attrubute of checkbox'},
-							 {name:'disabled', type: 'Boolean', default:'false', description:'Is checkbox disabled'},
+							 {name:'disabled', type: 'Boolean', default:'false', description:'set "true" to disable the checkbox'},
 							 {name:'color', type: 'String', default:'', description:'the color of checkbox'},
-							 {name:'inline', type: 'Boolean', default:'false', description:'Is the checkboxs display in one row'},]
+							 {name:'inline', type: 'Boolean', default:'false', description:'set "true" to make the checkbox display inline'},]
 				}
 			}
 			

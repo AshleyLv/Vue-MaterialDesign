@@ -86,6 +86,10 @@
 		padding: 6px 12px;
 		overflow:hidden;
 		font-size: 14px;
+		outline: none;
+		-moz-box-shadow: 0 3px 5px 0px rgba(0, 0, 0, 0.16);
+		-webkit-box-shadow: 0 3px 5px 0px rgba(0, 0, 0, 0.16);
+		box-shadow: 0 3px 5px 0px rgba(0, 0, 0, 0.16);
 		&.btn-xs{
 			padding: 1px 5px;
 			font-size: 12px;
