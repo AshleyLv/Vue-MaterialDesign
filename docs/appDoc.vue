@@ -12,6 +12,7 @@
 	    <md-button-doc></md-button-doc>
 		<md-checkbox-doc></md-checkbox-doc>
 		<md-radio-doc></md-radio-doc>
+		<md-input></md-input>
 	</div>
 	<div class="sidebar-container"></div>
 </section>
@@ -32,6 +33,7 @@
 	import mdCheckboxDoc from './mdCheckboxDoc.vue'
 	import mdRadioDoc from './mdRadioDoc.vue'
 	import mdButtonDoc from './mdButtonDoc.vue'
+	import mdInput from '../src/components/mdInput.vue'
 	export default{
 		components:{
 			mdRadio,
@@ -39,7 +41,8 @@
 			codeDoc,
 			mdCheckboxDoc,
 			mdRadioDoc,
-			mdButtonDoc
+			mdButtonDoc,
+			mdInput
 		}
 		
 	}

@@ -1,7 +1,7 @@
 <template>
 	<button :type="type" :class="'md-btn ' + shape + ' ' + color + ' ' + size + ' ' + inverseClass" :disabled="disabled" @click="ripple" v-el:btn><slot></slot></button>
 </template>
-<script type="text/javascript">
+<script>
 	import {validateValue} from './utils/utils';
 	export default{
 		props:{
