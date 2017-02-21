@@ -54,16 +54,17 @@
 		.header-section{
 			margin: 0;
 			width: 100%;
-			height: 300px;
-			background: #36c6d3;
-			padding-top: 120px;
-			color: #fff;
+			height: 360px;
+			background: #1e2226;
+			padding-top: 160px;
+			color:#71869c;
 			
 			margin-bottom: 50px;
 			text-align: center;
 			font-size: 20px;
 			>h1{
 				margin:0;
+				color: #50c5e0;
 				font-size: 50px;
 				text-shadow: 3px 3px 1px rgba(179, 179, 179, 0.5);
 			}
