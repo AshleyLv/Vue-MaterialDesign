@@ -1,18 +1,105 @@
 <template>
-	<div class="form-group form-md-line-input">
-		<input type="text" class="form-control" placeholder="Enter your name">
-		<label>123</label>
-		<span class="help-block">block</span>
+	<div class="md-input">
+		<input class="form-control input-icon" v-el:input v-model="value" 
+			:type="type"
+			:placeholder="placeholder"
+			:name="name"
+			:title="title"
+			:max="max" 
+			:min="min"
+			:readonly="readonly"
+			:disabled="disabled"
+			:required="required" @blur="onblur" @focus="onfocus">
+		<label>{{label}}</label>
+		<span class="help-block">{{help}}</span>
+		<i class="fa fa-bell-o"></i>
 	</div>
 </template>
 <script>
 	import {validateValue} from './utils/utils';
 	export default{
+		props:{
+			placeholder:{
+				type:String
+			},
+			label:{
+				type:String
+			},
+			name:{
+				type:String
+			},
+			value:{
+				twoWay: true,
+      			default: null
+			},
+			pattern:{
+				type:String
+			},
+			help:{
+				type:String
+			},
+			title:{
+				type:String
+			},
+			value:{
+				type:String
+			},
+			max:{
+				type:String
+			},
+			min:{
+				type:String
+			},
+			readonly: {
+				type: Boolean,
+				default: false
+			},
+			required: {
+				type: Boolean,
+				default: false
+			},
+			type: {
+				type: String,
+				default: 'text'
+			},
+			color:{
+				type:String,
+				default:'',
+				validator (value) {
+					return validateValue(value, ['btn-red', 'btn-pink', 'btn-blue','btn-yellow','btn-purple','btn-teal', 'btn-indigo', 'btn-cyan','btn-green','btn-orange','btn-grey'])
+                }
+			},
+			withIcon:{
+				type:Boolean,
+				default:false
+			},
+			iconClass:{
+				type:String
+			},
+			iconPosition:{
+				type:String,
+				default:'left',
+				validator(value){
+					return validateValue(value, ['left', 'right'])
+				}
+			},
+			disabled:{
+				type:Boolean
+			}
 
+		},
+		methods:{
+			onfocus:function(){
+
+			},
+			onblur:function(){
+
+			}
+		}
 	}
 </script>
 <style lang="less">
-	.form-group.form-md-line-input {
+	.md-input {
 		position: relative;
 		margin: 0 0 35px 0;
 		padding-top: 20px;
@@ -84,6 +171,26 @@
 			opacity: 0;
 			font-size: 12px;
 			color: #737373;
+			position: absolute;
+			margin: 11px 2px 4px 10px;
+			z-index: 3;
+			width: 16px;
+			font-size: 16px;
+			text-align: center;
+			left: 0;
+		}
+		i{
+			left: auto;
+			right: 8px;
+			margin: 11px 2px 10px 10px;
+			bottom: 0;
+			position: absolute;
+			margin: 11px 2px 4px 10px;
+			z-index: 3;
+			width: 16px;
+			font-size: 16px;
+			text-align: center;
 		}
 	}
+	
 </style>
