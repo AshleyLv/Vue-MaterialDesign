@@ -1,6 +1,16 @@
 <template>
 	<div class="md-input">
-		<input class="form-control input-icon" v-el:input v-model="value" 
+		<template v-if="icon">
+			<div class="input-group">
+				<span class="input-group-addon">
+					<i class="fa fa-envelope"></i>
+				</span>
+				<input type="text" class="form-control" placeholder="Email Address">
+				<label>Input Group</label>
+			</div>
+		</template>
+		<template v-else>
+			<input class="form-control input-icon" v-el:input v-model="value" 
 			:type="type"
 			:placeholder="placeholder"
 			:name="name"
@@ -10,9 +20,9 @@
 			:readonly="readonly"
 			:disabled="disabled"
 			:required="required" @blur="onblur" @focus="onfocus">
-		<label>{{label}}</label>
-		<span class="help-block">{{help}}</span>
-		<i class="fa fa-bell-o"></i>
+			<label>{{label}}</label>
+			<span class="help-block">{{help}}</span>
+		</template>
 	</div>
 </template>
 <script>
@@ -69,7 +79,7 @@
 					return validateValue(value, ['btn-red', 'btn-pink', 'btn-blue','btn-yellow','btn-purple','btn-teal', 'btn-indigo', 'btn-cyan','btn-green','btn-orange','btn-grey'])
                 }
 			},
-			withIcon:{
+			icon:{
 				type:Boolean,
 				default:false
 			},
@@ -179,18 +189,38 @@
 			text-align: center;
 			left: 0;
 		}
-		i{
-			left: auto;
-			right: 8px;
-			margin: 11px 2px 10px 10px;
-			bottom: 0;
-			position: absolute;
-			margin: 11px 2px 4px 10px;
-			z-index: 3;
-			width: 16px;
-			font-size: 16px;
-			text-align: center;
+		.input-group {
+			display: table;
+			border-collapse: separate;
+			.input-group-addon {
+				padding: 6px 12px;
+				font-size: 14px;
+				font-weight: 400;
+				line-height: 1;
+				color: #555;
+				text-align: center;
+				background-color: #eee;
+				border: 1px solid #ccc;
+				border-radius: 4px;
+				background: 0 0;
+				border: 0;
+				width: 1%;
+				white-space: nowrap;
+				vertical-align: middle;
+
+				display: table-cell;
+			}
 		}
+		
+		// i{
+		// 	position: absolute;
+		// 	margin: 11px 2px 4px 10px;
+		// 	z-index: 3;
+		// 	width: 16px;
+		// 	font-size: 16px;
+		// 	text-align: center;
+		// 	left: 0;
+		// }
 	}
 	
 </style>
