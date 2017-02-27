@@ -3,14 +3,25 @@
 		<template v-if="icon">
 			<div class="input-group">
 				<span class="input-group-addon">
-					<i class="fa fa-envelope"></i>
+					<i :class="iconClass"></i>
 				</span>
-				<input type="text" class="form-control" placeholder="Email Address">
-				<label>Input Group</label>
+				<input class="form-control" v-el:input v-model="value" 
+				:type="type"
+				:placeholder="placeholder"
+				:name="name"
+				:title="title"
+				:max="max" 
+				:min="min"
+				:readonly="readonly"
+				:disabled="disabled"
+				:required="required" @blur="onblur" @focus="onfocus"
+				@keyup.enter="keyUpEnter">
+				<label>{{label}}</label>
+
 			</div>
 		</template>
 		<template v-else>
-			<input class="form-control input-icon" v-el:input v-model="value" 
+			<input class="form-control" v-el:input v-model="value" 
 			:type="type"
 			:placeholder="placeholder"
 			:name="name"
@@ -95,6 +106,10 @@
 			},
 			disabled:{
 				type:Boolean
+			},
+			isSumbit:{
+				type:Boolean,
+				default:false
 			}
 
 		},
@@ -103,7 +118,28 @@
 
 			},
 			onblur:function(){
+				if(!this.validate()){
+					
+				}
+			},
+			keyUpEnter: function(){
+				if(this.isSumbit){
 
+				}
+				
+			},
+			validate : function(){
+				if(this.disabled && this.readonly){
+					return true
+				}
+				let value = (this.value || '').trim()
+				if(this.required && !value){
+					return false
+				}
+				if(value.length<this.minlength || value.length>this.maxlength){
+					return false
+				}
+				return true
 			}
 		}
 	}
@@ -211,16 +247,6 @@
 				display: table-cell;
 			}
 		}
-		
-		// i{
-		// 	position: absolute;
-		// 	margin: 11px 2px 4px 10px;
-		// 	z-index: 3;
-		// 	width: 16px;
-		// 	font-size: 16px;
-		// 	text-align: center;
-		// 	left: 0;
-		// }
 	}
 	
 </style>

@@ -12,7 +12,7 @@
 	    <md-button-doc></md-button-doc>
 		<md-checkbox-doc></md-checkbox-doc>
 		<md-radio-doc></md-radio-doc>
-		<md-input label="123" help="zzz" title="111" value="cvcv" :icon=true></md-input>
+		<md-input label="123" help="zzz" title="111" value="cvcv" icon-class="fa fa-search" :icon=true></md-input>
 	</div>
 	<div class="sidebar-container"></div>
 </section>
@@ -43,9 +43,6 @@
 			mdRadioDoc,
 			mdButtonDoc,
 			mdInput
-		},
-		data(){
-			return {icon:true}
 		}
 		
 	}

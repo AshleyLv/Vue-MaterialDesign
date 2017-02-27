@@ -1,5 +1,5 @@
 <template>
-	<demo-component name="Buttons" desc="">
+	<demo-component name="Buttons">
 		<div class="component-label">Shape</div>
 		<md-button type="button" color="btn-blue" size="btn-lg">normal</md-button>
 		<md-button type="button" color="btn-teal" shape="btn-circle" size="btn-lg">circle</md-button>
